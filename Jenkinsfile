@@ -15,8 +15,10 @@ pipeline {
 
   stages {
     stage('Creazione Cartella') {
-      sh 'pwd; mkdir ${nomecartella}'
+      steps {
+        sh 'pwd; mkdir ${nomecartella}'
 
+      }
     }
   }
 
