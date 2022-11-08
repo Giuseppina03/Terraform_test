@@ -12,13 +12,12 @@ pipeline {
   }
 
   agent any
-  options {
-    timestamps()
-  }
 
-  stage('Creazione Cartella') {
-    sh 'pwd; mkdir ${nomecartella}'
+  stages {
+    stage('Creazione Cartella') {
+      sh 'pwd; mkdir ${nomecartella}'
 
+    }
   }
 
 }
