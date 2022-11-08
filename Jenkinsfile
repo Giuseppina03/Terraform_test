@@ -16,7 +16,7 @@ pipeline {
   stages {
     stage('Creazione Cartella') {
       steps {
-        sh 'pwd; mkdir ${nomecartella}'
+        sh 'pwd; sudo mkdir ${nomecartella}'
 
       }
     }
