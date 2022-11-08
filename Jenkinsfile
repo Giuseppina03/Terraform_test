@@ -1,26 +1,24 @@
 pipeline {
 
-    parameters {
-        string(name: 'nomecartella', defaultValue: 'terraform', description: 'Nome della cartella da creare')
-        
-           }
+  parameters {
+    string(name: 'nomecartella', defaultValue: 'terraform', description: 'Nome della cartella da creare')
 
-     environment {
-        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-        TF_VAR_private_key_file = credentials('MY_KEY_PAIR_PEM')
-    }
-
-   agent  any
-        options {
-                timestamps ()
-            }
-
-        stage('Creazione Cartella') {
-            steps {
-                sh 'pwd; mkdir ${nomecartella}'
-               
-            }
-       }
-     
   }
+
+  environment {
+    AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+    TF_VAR_private_key_file = credentials('MY_KEY_PAIR_PEM')
+  }
+
+  agent any
+  options {
+    timestamps()
+  }
+
+  stage('Creazione Cartella') {
+    sh 'pwd; mkdir ${nomecartella}'
+
+  }
+
+}
