@@ -16,21 +16,10 @@ pipeline {
         options {
                 timestamps ()
             }
-    stages {
-        stage('checkout') {
-            steps {
-                 script{
-                        dir("terraform")
-                        {
-                            git "https://github.com/Giuseppina03/Terraform_test.git"
-                        }
-                    }
-                }
-            }
 
         stage('Creazione Cartella') {
             steps {
-                sh 'pwd;cd terraform/aws-instance-first-script ; mkdir ${nomecartella}'
+                sh 'pwd; mkdir ${nomecartella}'
                
             }
         }
