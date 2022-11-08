@@ -16,7 +16,7 @@ pipeline {
   stages {
     stage('Creazione Cartella') {
       steps {
-        sh 'pwd; cd terraform/aws-instance-first-script; mkdir ${nomecartella}'
+        sh 'sudo mkdir ${nomecartella}'
 
       }
     }
