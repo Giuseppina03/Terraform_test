@@ -1,7 +1,8 @@
 pipeline {
 
   parameters {
-    string(name: 'nomecartella', defaultValue: 'terraform', description: 'Nome della cartella da creare')
+    string(name: 'nomecartella', defaultValue: 'terraform', description: 'Nome della cartella da creare'),
+    string(name: 'test1', defaultValue: 'terraform1', description: 'Nome della cartella da creare')
 
   }
 
