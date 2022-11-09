@@ -17,7 +17,7 @@ pipeline {
   stages {
     stage('Creazione Cartella') {
       steps {
-        "$(echo test1)"
+        echo "${test1}"
 
       }
     }
