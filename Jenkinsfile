@@ -16,7 +16,7 @@ pipeline {
   stages {
     stage('Creazione Cartella') {
       steps {
-        sh 'mkdir nomecartella'
+        echo ${test1}
 
       }
     }
